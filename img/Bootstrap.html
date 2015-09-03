@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///Users/supmiguel/Desktop/web/bigProyects/FinalProyect1/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+    <script src="./Bootstrap_files/jquery-2.1.4.min.js"></script>
+    <script src="./Bootstrap_files/script.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./Bootstrap_files/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="file:///Users/supmiguel/Desktop/web/bigProyects/FinalProyect1/style.css">
+</head>
+<body>
+    <audio id="player" src=""></audio>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="span12">TITLE</div>
+        </div>
+        <div class="row vertical-space-top">
+            <div class="col-md-1">
+                <!-- space -->
+            </div>
+            <div class="col-md-4">
+                <div class="span4">
+                    <span class="label label-danger center-block">Chose your favorite genre</span>
+                </div>
+                <div class="span4 bg-warning">
+                    <!-- <select class="center-block vertical-space" id="genre">
+                        <option value="Blues">  Blues </option>
+                        <option value="Country">  Country </option>
+                        <option value="Holiday">  Holiday </option>
+                        <option value="Jaz">  Jaz </option>
+                        <option value="Pop Latino">  Pop Latino </option>
+                        <option value="Reggaeton y Hip-Hop">  Reggaeton y Hip-Hop </option>
+                        <option value="Alternativo & Rock Latino">  Alternativo & Rock Latino </option>
+                        <option value="Regional Mexicano">  Regional Mexicano </option>
+                        <option value="New Age">  New Age </option>
+                        <option value="Pop">  Pop </option>
+                        <option value="Hip-Hop/Rap">  Hip-Hop/Rap </option>
+                        <option value="Alternative">  Alternative </option>
+                        <option value="Rock">  Rock </option>
+                    </select> -->
+                    <button type="button" class="btn btn-default vertical-space genre" aria-label="center Align">
+                        Blues
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Country
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Holiday
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Jaz
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Reggaeton
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Rock
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Banda
+                    </button>
+                    <button type="button" class="btn btn-default genre" aria-label="center Align">
+                        Alternative
+                    </button>
+                    <button type="button" class="btn btn-default genre vertical-space" aria-label="center Align">
+                        Pop
+                    </button>
+                </div>
+                <div class="span4 bg-primary">Image and instructions</div>
+                <div class="span4 bg-warning vertical-space">
+                    <table class="table">
+                        <tbody><tr>
+                            <td>Chances</td>
+                        </tr>
+                        <tr>
+                            <td id="chances">5</td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="span4 bg-primary vertical-space">
+                    <table class="table">
+                        <tbody><tr>
+                            <td>Matches</td>
+                            <td>failures</td>
+                        </tr>
+                        <tr>
+                            <td id="matches">0</td>
+                            <td id="failures">0</td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="span4 bg-warning">
+                <span class="label label-danger center-block vertical-space-top">Want more difficult?</span>
+                </div>
+                <div class="span4 bg-warning vertical-bottom">
+                    <!-- <select class="center-block" id="level">
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select> -->
+                    <button type="button" class="btn btn-default level vertical-space" aria-label="center Align">
+                        Easy
+                    </button>
+                    <button type="button" class="btn btn-default level vertical-space" aria-label="center Align">
+                        Medium
+                    </button>
+                    <button type="button" class="btn btn-default level vertical-space" aria-label="center Align">
+                        Hard
+                    </button>
+                </div>
+                <div class="span4 bg-warning vertical-space">
+                    <button type="button" class="btn btn-default center-block" aria-label="center Align" id="reset">
+                        RESET
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 bg-success">
+                <div class="span6">
+                    <table class="table">
+                        <tbody><tr>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="0"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="1"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="2"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="3"></td>
+                        </tr>
+                        <tr>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="4"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="5"></td> 
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="6"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="7"></td>
+                        </tr>
+                        <tr>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="8"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="9"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="10"></td>
+                          <td><img src="./Bootstrap_files/1.png" class="card" id="11"></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <!-- space -->
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Macth The Music</title>
+    <script src ="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="span12">
+                <img src="img/l1.png" id="title" class="center-block">
+            </div>
+        </div>
+        <div class="row vertical-space-top">
+            <div class="col-md-1">
+                <!-- space -->
+            </div>
+            <div class="col-md-4">
+                <div class="span4">
+                <span class="label center-block vertical-space-bottom instruc" id="ilevel"><p>Chose The difficult</p></span>
+                </div>
+                <div class="span4" id="lev">
+                    <img src="./img/easy.PNG" class="level" id="Easy">
+                    <img src="./img/medium.PNG" class="level" id="Medium">
+                    <img src="./img/hard.PNG" class="level" id="Hard">
+                </div>
+                <div class="span4">
+                    <span class="label center-block vertical-space-bottom instruc" id="igenre"><p>Chose your favorite genre</p></span>
+                </div>
+                <div class="span4" id="artist">
+                    <img src="./img/taylor.jpeg" class="genre" alt="Taylor Swift">
+                    <img src="./img/megan.jpg" class="genre" alt="Meghan Trainor">
+                    <img src="./img/ed.jpg" class="genre" alt="Ed Sheeran">
+                    <img src="./img/maroon.jpeg" class="genre" alt="Maroon 5">
+                    <img src="./img/Florida.jpg" class="genre" alt="Flo Rida">
+                    <img src="./img/nicki.jpg" class="genre" alt="Nicki Minaj">
+                    <img src="./img/Rihanna.jpg" class="genre" alt="Rihanna">
+                    <img src="./img/Pitbull.jpg" class="genre" alt="Pitbull">
+                    <img src="./img/Ariana.jpg" class="genre" alt="Ariana Grande">
+                    <img src="./img/wiz.jpg" class="genre" alt="Wiz Khalifa">
+                    <img src="./img/daddy.jpg" class="genre" alt="Daddy Yankee">
+                    <img src="./img/don.jpg" class="genre" alt="Don Omar">
+                </div>
+                <div class="span4 vertical-space">
+                    <button type="button" class="btn btn-default center-block" aria-label="center Align" id="reset">
+                        RESET
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="span6" id="instructions" class="instruc">
+                    <!-- Instructions -->
+                </div>
+                <div class="span6">
+                    <table class="table">
+                        <tbody class="new-table">
+                            <!-- Board -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="span6">
+                    <table class="table">
+                        <tbody class="table-score">
+                            <!-- Score -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="span6">
+                    <audio id="player" src=""></audio>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <!-- space -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
