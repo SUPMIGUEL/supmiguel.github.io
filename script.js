@@ -1,6 +1,6 @@
 window.onload = function(){
     $("#instructions").hide();
-    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],numCards=0,c1,c2,count=0,fail=0,chances=5;
+    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],numCards=0,c1,c2,count=0,fail=0,chances=7;
     $("#ilevel").addClass("step");
     clicklistener();  
 
@@ -51,7 +51,7 @@ window.onload = function(){
             $(".new-table").append("</tr><tr>");
         }
         $(".table-score").append("<tr><td><img src=./img/win.png id=win></td><td id=matches class=score>0</td><td><img src=./img/lose.png id=lose></td><td id=failures class=score>0</td></tr>");
-        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have 5 opportunities to make a mistake</span>");
+        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have 7 opportunities to make a mistake</span>");
         array(rows);
     }
 
@@ -188,7 +188,7 @@ window.onload = function(){
                 cardBoard[i].classList.remove("delete");      
         }
         numCards=0;
-        chances=5;
+        chances=7;
         count=0;
         fail=0;
         if (fail !==0 & count !==0) {
