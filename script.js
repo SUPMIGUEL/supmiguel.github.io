@@ -1,6 +1,6 @@
 window.onload = function(){
     $("#instructions").hide();
-    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],numCards=0,c1,c2,count=0,fail=0,chances=7;
+    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],c1,c2,count=0,fail=0,chances=7,cardOne=false,cardTwo=false;
     $("#ilevel").addClass("step");
     clicklistener();  
 
@@ -10,7 +10,6 @@ window.onload = function(){
     }
 
     function levelChose(t){             // When te user chose one of the levels of difficult
-        
         fullreset();
         $("#igenre").addClass("step");
         $("#ilevel").removeClass("step");
@@ -117,27 +116,31 @@ window.onload = function(){
     }
 
     function clickCard(t){                  // When the user click on the board
-        numCards++;
-        if (numCards==1) {
+        if(!cardOne && !cardTwo) {
             c1=$(t).get(0).id;      // Take the index of the card on the board
             play();
             $(".card#"+c1).off();
+            cardOne=true;
         }
-        if (numCards==2) {
+        else if (cardOne && !cardTwo){
             c2=$(t).get(0).id;
             play();
+            $(".card#"+c2).off();
+            cardTwo=true;
             check();
-        }   
+        }  
         function play(){                                    //Play the song of the card in the board
             $("#player").attr("src",urls[cardsDes[t.id]]);
             $("#player")[0].play();
             $(t).attr("src","./img/2.png");
-        }
+        } 
     }
+
+    
 
     function check(){                       // Check if the two cards have the same song
         if (cardsDes[c1]===cardsDes[c2]) {
-            numCards=0;
+            
             count++;
             $("#matches").text(count);
             if (count===songs) {
@@ -150,7 +153,7 @@ window.onload = function(){
         else{
             fail++;
             chances--;
-            numCards=0;
+            
             $(".card#"+c1).on("click", function() {   clickCard(this);    });
             $(".card#"+c2).on("click", function() {   clickCard(this);    });
             cardBoard[c1].classList.add("delete");
@@ -173,10 +176,11 @@ window.onload = function(){
             if (cardBoard[i].classList[2]=="delete") {
                 cardBoard[i].setAttribute("src","./img/1.png");
                 cardBoard[i].classList.remove("delete");
-                numCards=0;
             }
         }
         $("#player")[0].pause();
+        cardOne=false;
+        cardTwo=false;
     }
 
     function fullreset(){                               // Reset the board and the score
@@ -187,7 +191,6 @@ window.onload = function(){
                 cardBoard[i].setAttribute("src","./img/1.png");
                 cardBoard[i].classList.remove("delete");      
         }
-        numCards=0;
         chances=7;
         count=0;
         fail=0;
@@ -202,6 +205,8 @@ window.onload = function(){
 
         set=false;
         $("#player")[0].pause();
+        cardOne=false;
+        cardTwo=false;
         $(".genre").removeClass("genre-Select");
         $(".genre").removeClass("genre-Selected");
     }
