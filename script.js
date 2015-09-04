@@ -1,6 +1,6 @@
 window.onload = function(){
     $("#instructions").hide();
-    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],c1,c2,count=0,fail=0,chances=7,cardOne=false,cardTwo=false;
+    var set=false, songs, level, cardsDes, genre, urls=[],cardBoard=[],c1,c2,count=0,fail=0,chances,cardOne=false,cardTwo=false;
     $("#ilevel").addClass("step");
     clicklistener();  
 
@@ -50,26 +50,30 @@ window.onload = function(){
             }
             $(".new-table").append("</tr><tr>");
         }
-        $(".table-score").append("<tr><td><img src=./img/win.png id=win></td><td id=matches class=score>0</td><td><img src=./img/lose.png id=lose></td><td id=failures class=score>0</td></tr>");
-        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have 7 opportunities to be wrong</span>");
         array(rows);
+        $(".table-score").append("<tr><td><img src=./img/win.png id=win></td><td id=matches class=score>0</td><td><img src=./img/lose.png id=lose></td><td id=failures class=score>0</td></tr>");
+        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have "+chances+" opportunities to be wrong</span>");
+        
     }
 
     function array(level){            // To create the array with the "cards" depending of the level
         var stop;
         if (level===3) {
+            chances=8;
             stop = 12;
             songs = 6;
             cardsDes=fill(stop);
             console.log(cardsDes);          // TEST
         } 
         else if (level===4) {
+            chances=9;
             stop = 16;
             songs = 8;
             cardsDes=fill(stop);
             console.log(cardsDes);          // TEST
         }
         else if (level===5) {
+            chances=10;
             stop = 20;
             songs = 10;
             cardsDes=fill(stop);
@@ -194,7 +198,6 @@ window.onload = function(){
                 cardBoard[i].setAttribute("src","./img/1.png");
                 cardBoard[i].classList.remove("delete");      
         }
-        chances=7;
         count=0;
         fail=0;
         if (fail !==0 & count !==0) {
