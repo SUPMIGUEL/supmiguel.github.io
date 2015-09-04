@@ -1,5 +1,4 @@
 body {
-    /*background-color: #B6B6B4;*/
     background: url(./img/WP/8.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -8,8 +7,7 @@ body {
 }
 #title{
     margin-top: 10px;
-    height: 106px;
-    width: 700px;
+    width: 50%;
 }
 .vertical-space-top { 
   margin-top:20px; 
@@ -193,5 +191,9 @@ body {
     color: #585858;
 }
 .step{
-    background-color: #66FF66;
+    background-color: #33CC99;
+}
+#mess{
+  height:100%;
+  width: 100%;
 }

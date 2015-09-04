@@ -10,6 +10,7 @@ window.onload = function(){
     }
 
     function levelChose(t){             // When te user chose one of the levels of difficult
+        $("#message").empty();
         fullreset();
         $("#igenre").addClass("step");
         $("#ilevel").removeClass("step");
@@ -50,7 +51,7 @@ window.onload = function(){
             $(".new-table").append("</tr><tr>");
         }
         $(".table-score").append("<tr><td><img src=./img/win.png id=win></td><td id=matches class=score>0</td><td><img src=./img/lose.png id=lose></td><td id=failures class=score>0</td></tr>");
-        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have 7 opportunities to make a mistake</span>");
+        $("#instructions").append("<span class='label center-block instrucc'>Click one card and listen</span><span class='label center-block instrucc'>Click and listen another card</span><span class='label center-block instrucc'>The two cards match? Find the pairs!</span><span class='label center-block instrucc'>You have 7 opportunities to be wrong</span>");
         array(rows);
     }
 
@@ -58,7 +59,7 @@ window.onload = function(){
         var stop;
         if (level===3) {
             stop = 12;
-            songs=6;
+            songs = 6;
             cardsDes=fill(stop);
             console.log(cardsDes);          // TEST
         } 
@@ -144,11 +145,13 @@ window.onload = function(){
             count++;
             $("#matches").text(count);
             if (count===songs) {
-                alert("Congratulations");
+                $("#message").append("<img id='mess' src=./img/winner.png>");
                 fullreset();
             }
             $(".card#"+c1).removeClass("card-show");
             $(".card#"+c2).removeClass("card-show");
+            cardOne=false;
+            cardTwo=false;
         }
         else{
             fail++;
@@ -161,7 +164,7 @@ window.onload = function(){
             $("#failures").text(fail);
             if (chances===0) {
                 $("#player")[0].pause();
-                alert("Game Over");
+                $("#message").append("<img id='mess' src=./img/gameover.png>");
                 fullreset();
             }
             else{
